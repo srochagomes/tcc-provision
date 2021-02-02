@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-web-deployment
+spec:  
+  selector:
+      matchLabels:
+        name: tcc-web-pod     
+  
+  template:
+    metadata:
+      labels:
+        name: tcc-web-pod
+    spec:
+      containers:
+        - name: container-aplicacao-tcc-web
+          image: docker.io/srochg/tcc_front
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

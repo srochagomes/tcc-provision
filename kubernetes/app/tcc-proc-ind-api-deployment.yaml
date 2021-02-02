@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-proc-ind-api-deployment
+spec:  
+  selector:
+      matchLabels:
+        name: tcc-proc-ind-api-pod     
+  template:
+    metadata:
+      labels:
+        name: tcc-proc-ind-api-pod
+    spec:
+      containers:
+        - name: container-tcc-proc-ind-api
+          image: docker.io/srochg/processo-industrial-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: tcc-configmap

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tcc-db-postgress
+  template:
+    metadata:
+      name: tcc-db-postgress      
+      labels:
+        app: tcc-db-postgress
+    spec:            
+      containers:
+        - name: tcc-db-pod
+          image: postgres:10.4
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: tcc-configmap
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgre-db-volume
+      volumes:
+        - name: postgre-db-volume
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
