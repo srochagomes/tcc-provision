@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-router-api-deployment
+spec:  
+  selector:
+      matchLabels:
+        name: tcc-router-api-pod     
+  template:
+    metadata:
+      labels:
+        name: tcc-router-api-pod
+    spec:
+      containers:
+        - name: container-tcc-router
+          image: docker.io/srochg/tcc-router
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

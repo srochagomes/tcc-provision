@@ -26,10 +26,10 @@ spec:
   http:
     - match:
       - uri:  # IF
-          prefix: "/api/listings"
+          prefix: "/"
       route: # THEN
       - destination:
-          host: tcc-proc-ind-api-service.default.svc.cluster.local
+          host: tcc-router-api-service.default.svc.cluster.local
           subset: original
           
 ---
@@ -39,8 +39,8 @@ metadata:
   name: tcc-api-gateway
   namespace: default
 spec:
-  host: tcc-proc-ind-api-service.default.svc.cluster.local
+  host: tcc-router-api-service.default.svc.cluster.local
   subsets:
     - labels:
-        name: tcc-proc-ind-api-pod
+        name: tcc-router-api-pod
       name: original

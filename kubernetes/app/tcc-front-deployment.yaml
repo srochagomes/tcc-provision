@@ -4,8 +4,8 @@ metadata:
   name: tcc-web-deployment
 spec:  
   selector:
-      matchLabels:
-        name: tcc-web-pod     
+    matchLabels:
+      name: tcc-web-pod     
   
   template:
     metadata:

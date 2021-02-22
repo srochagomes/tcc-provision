@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-auth-api-deployment
+spec:  
+  selector:
+      matchLabels:
+        name: tcc-auth-api-pod     
+  template:
+    metadata:
+      labels:
+        name: tcc-auth-api-pod
+    spec:
+      containers:
+        - name: container-tcc-auth
+          image: docker.io/srochg/tcc-auth
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
