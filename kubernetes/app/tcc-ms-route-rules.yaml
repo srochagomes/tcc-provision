@@ -31,6 +31,26 @@ spec:
       - destination:
           host: tcc-router-api-service.default.svc.cluster.local
           subset: original
+
+      corsPolicy:
+        allowOrigins:
+        - regex: '\*'
+        allowMethods:
+        - POST
+        - GET
+        - PUT
+        - DELETE
+        - OPTIONS
+        - PATCH
+        - PATCH
+        
+        allowHeaders:
+        - Content-Disposition
+        - Location
+        - Authorization
+        - content-type
+        maxAge: "24h"
+
           
 ---
 kind: DestinationRule
