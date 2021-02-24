@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tcc-rabbitmq-svc
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 15672
+      name: http
+    - port: 5672
+      name: ampq
+    - port: 25676
+      name: portsext 
+  selector:
+    app: tcc-ampq-rabbitmq

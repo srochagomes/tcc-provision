@@ -7,6 +7,9 @@ kubectl apply -f app/tcc-auth-api-deployment.yaml
 kubectl apply -f app/tcc-auth-api-service.yaml
 kubectl apply -f app/tcc-auth-api-hpa.yaml
 
+kubectl apply -f app/tcc-rabbitmq-deployment.yaml
+kubectl apply -f app/tcc-rabbitmq-svc.yaml
+
 kubectl apply -f app/tcc-db-configmap.yaml
 kubectl apply -f app/tcc-db-pv.yaml
 kubectl apply -f app/tcc-db-deployment.yaml
