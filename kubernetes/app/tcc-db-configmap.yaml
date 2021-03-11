@@ -10,3 +10,9 @@ data:
   POSTGRES_DB: tcc_db
   POSTGRES_USER: postgresadmin
   POSTGRES_PASSWORD: admin123  
+  RABBIT_ADDRESS: tcc-rabbitmq-svc.default.svc.cluster.local
+  RABBIT_PORT: '5672'
+  RABBIT_USER: guest
+  RABBIT_PASSWORD: guest
+  API_OAUTH_ADDRESS: 'http://tcc-auth-api-service.default.svc.cluster.local:8080/oauth'
+  API_PROCESSO_INDUSTRIAL_ADDRESS: 'http://tcc-proc-ind-api-service.default.svc.cluster.local:8080/api'
