@@ -20,6 +20,12 @@ kubectl apply -f app/tcc-front-hpa.yaml
 kubectl apply -f app/tcc-proc-ind-api-deployment.yaml
 kubectl apply -f app/tcc-proc-ind-api-service.yaml
 kubectl apply -f app/tcc-proc-ind-api-hpa.yaml
+kubectl apply -f app/tcc-norma-api-deployment.yaml
+kubectl apply -f app/tcc-norma-api-service.yaml
+kubectl apply -f app/tcc-norma-api-hpa.yaml
+kubectl apply -f app/tcc-consultoria-api-deployment.yaml
+kubectl apply -f app/tcc-consultoria-api-service.yaml
+kubectl apply -f app/tcc-consultoria-api-hpa.yaml
 kubectl apply -f app/tcc-router-api-deployment.yaml
 kubectl apply -f app/tcc-router-api-service.yaml
 kubectl apply -f app/tcc-router-api-hpa.yaml

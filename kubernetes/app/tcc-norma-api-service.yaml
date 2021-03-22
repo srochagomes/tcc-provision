@@ -1,0 +1,11 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tcc-norma-api-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+  selector:
+    name: tcc-norma-api-pod

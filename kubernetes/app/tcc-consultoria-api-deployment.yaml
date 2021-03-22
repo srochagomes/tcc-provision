@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-consultoria-api-deployment
+spec:  
+  selector:
+      matchLabels:
+        name: tcc-consultoria-api-pod     
+  template:
+    metadata:
+      labels:
+        name: tcc-consultoria-api-pod
+    spec:
+      containers:
+        - name: container-consultoria-ind-api
+          image: docker.io/srochg/tcc-consultoria-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: tcc-configmap
