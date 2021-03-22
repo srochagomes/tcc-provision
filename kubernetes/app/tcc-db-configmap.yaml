@@ -16,3 +16,5 @@ data:
   RABBIT_PASSWORD: guest
   API_OAUTH_ADDRESS: 'http://tcc-auth-api-service.default.svc.cluster.local:8080/oauth'
   API_PROCESSO_INDUSTRIAL_ADDRESS: 'http://tcc-proc-ind-api-service.default.svc.cluster.local:8080/api'
+  API_CONSULTORIAS_ASSESSORIAS_ADDRESS: 'http://tcc-consultoria-api-service.default.svc.cluster.local:8080/api'
+  API_NORMAS_ADDRESS: 'http://tcc-norma-api-service.default.svc.cluster.local:8080/api'
