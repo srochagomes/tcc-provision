@@ -8,16 +8,12 @@ kubectl apply -f app/tcc-db-pv.yaml
 kubectl apply -f app/tcc-db-deployment.yaml
 kubectl apply -f app/tcc-db-svc.yaml
 
-kubectl apply -f app/tcc-auth-api-deployment.yaml
-kubectl apply -f app/tcc-auth-api-service.yaml
-kubectl apply -f app/tcc-auth-api-hpa.yaml
-
 kubectl apply -f app/tcc-rabbitmq-deployment.yaml
 kubectl apply -f app/tcc-rabbitmq-svc.yaml
 
-kubectl apply -f app/tcc-front-deployment.yaml
-kubectl apply -f app/tcc-front-service.yaml
-kubectl apply -f app/tcc-front-hpa.yaml
+kubectl apply -f app/tcc-auth-api-deployment.yaml
+kubectl apply -f app/tcc-auth-api-service.yaml
+kubectl apply -f app/tcc-auth-api-hpa.yaml
 
 kubectl apply -f app/tcc-proc-ind-api-deployment.yaml
 kubectl apply -f app/tcc-proc-ind-api-service.yaml
@@ -34,5 +30,9 @@ kubectl apply -f app/tcc-consultoria-api-hpa.yaml
 kubectl apply -f app/tcc-router-api-deployment.yaml
 kubectl apply -f app/tcc-router-api-service.yaml
 kubectl apply -f app/tcc-router-api-hpa.yaml
+
+kubectl apply -f app/tcc-front-deployment.yaml
+kubectl apply -f app/tcc-front-service.yaml
+kubectl apply -f app/tcc-front-hpa.yaml
 
 kubectl apply -f app/tcc-ms-route-rules.yaml
