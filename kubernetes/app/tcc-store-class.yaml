@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: tcc-store-class
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  zone: southamerica-east1-a
+  fstype: ext4
+  replication-type: none

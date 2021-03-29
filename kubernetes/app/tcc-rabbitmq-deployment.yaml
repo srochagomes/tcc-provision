@@ -21,9 +21,8 @@ spec:
             value: "1WqgH8N2v1qDBDZDbNy8Bg9IkPWLEpu79m6q+0t36lQ="
           volumeMounts:
           - mountPath: /var/lib/rabbitmq
-            name: rabbitmq-data
+            name: rabbitmq-pv-volume
       volumes:
-        - name: rabbitmq-data
-          hostPath:
-            path: /data/rabbitmq
-            type: DirectoryOrCreate
+        - name: rabbitmq-pv-volume
+          persistentVolumeClaim:
+            claimName: rabbitmq-pv-claim

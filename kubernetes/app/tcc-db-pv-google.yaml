@@ -6,13 +6,18 @@ metadata:
     type: local
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: tcc-store-class
   capacity:
-    storage: 10Gi
+    storage: 50G
   accessModes:
     - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
+  claimRef:
+    namespace: default
+    name: postgres-pv-claim
+  gcePersistentDisk:
+    pdName: tcc-db-disk
+    fsType: ext4    
+  
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -21,9 +26,10 @@ metadata:
   labels:
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: tcc-store-class
+  volumeName: postgres-pv-volume
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
+      storage: 50G

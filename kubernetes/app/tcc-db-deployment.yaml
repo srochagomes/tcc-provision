@@ -24,8 +24,9 @@ spec:
                 name: tcc-configmap
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgre-db-volume
+              name: postgres-db-volume
+              subPath: postgres
       volumes:
-        - name: postgre-db-volume
+        - name: postgres-db-volume
           persistentVolumeClaim:
             claimName: postgres-pv-claim

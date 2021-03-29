@@ -1,0 +1,35 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: rabbitmq-pv-volume
+  labels:
+    type: local
+    app: rabbitmq
+spec:
+  storageClassName: tcc-store-class
+  capacity:
+    storage: 50G
+  accessModes:
+    - ReadWriteMany
+  claimRef:
+    namespace: default
+    name: rabbitmq-pv-claim
+  gcePersistentDisk:
+    pdName: tcc-rabbitmq-disk
+    fsType: ext4    
+  
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: rabbitmq-pv-claim
+  labels:
+    app: rabbitmq
+spec:
+  storageClassName: tcc-store-class
+  volumeName: rabbitmq-pv-volume
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50G
